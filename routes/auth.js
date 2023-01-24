@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const fetchuser=require('../middleware/fetchuser');
 
+// const jwt_secret = process.env.JWT_SECRET;
+
 
 //ROUTE 1:Create a user using: POST "/api/auth" . Dosen't require Auth
 //router.get('/',(req,res)=>{//code})
@@ -42,7 +44,8 @@ router.post('/createuser',[
                 id:user.id
             }
         }
-       const JWT_SECRET = 'Iknowyourdarkestsecretsobeverycarefulofme';
+        // const jwt_secret = process.env.JWT_SECRET;
+        const JWT_SECRET = "Iknowyourdarkestsecretsobeverycarefulofme";
        const authToken= jwt.sign(data, JWT_SECRET);
       
         res.json({authToken});
@@ -87,7 +90,8 @@ router.post('/createuser',[
             id:user.id
         }
     }
-   const JWT_SECRET = 'Iknowyourdarkestsecretsobeverycarefulofme';
+//    const jwt_secret = process.env.JWT_SECRET;
+const JWT_SECRET = "Iknowyourdarkestsecretsobeverycarefulofme";
    const authToken= jwt.sign(data, JWT_SECRET);
   
     res.json({authToken});
