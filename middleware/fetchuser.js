@@ -10,6 +10,8 @@ const fetchuser =(req,res,next)=>{
     const JWT_SECRET = "Iknowyourdarkestsecretsobeverycarefulofme";
    //  const jwt_secret=process.env.JWT_SECRET;
     const data= jwt.verify(token, JWT_SECRET);
+    //.verify(token=>['authToken' saved in the DataBase],secretOrPrivateKey)
+    //.verify VERIFIES IF THE USER IS THE SAME OR NOT
     req.user=data.user;
     next();  
  } catch (error) {

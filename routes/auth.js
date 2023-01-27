@@ -46,8 +46,11 @@ router.post('/createuser',[
         }
         // const jwt_secret = process.env.JWT_SECRET;
         const JWT_SECRET = "Iknowyourdarkestsecretsobeverycarefulofme";
+        //secretOrPrivateKey(String) SHOULD BE ATLEAST 32 CHARACTERS LONG
        const authToken= jwt.sign(data, JWT_SECRET);
-      
+       //.sign({paylod object}=>[payload object = any unique data],secretOrPrivateKey=>"String",|[not added here]{options=>expiresIn="3 hours"})[syntax]||GENERATES AUTHENTICATION TOKEN FOR USER TO 'LOG IN' FOR THE NEXT TIME
+       //expiresIn="3 hours" makes the user 'log out' from the site after 3 hours{token expires after 3 hours}[not included]
+
         res.json({authToken});
         //no need to write ({authToken:authToken})
 
