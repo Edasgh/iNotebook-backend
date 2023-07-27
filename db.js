@@ -1,6 +1,6 @@
 const mongoose= require('mongoose');
-
-const mongoUrI="mongodb+srv://user_23:47smwFOpExFD4XmA@clusterinb1.sbe2ses.mongodb.net/?retryWrites=true&w=majority";
+require('dotenv').config();
+const mongoUrI=process.env.MONGO_URI;
 
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 
